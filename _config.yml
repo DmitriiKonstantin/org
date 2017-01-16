@@ -8,7 +8,7 @@ markdown: kramdown
 #  sass_dir: css
 #  style:    expanded
 
-permalink: /:title.html
+permalink: /:title
 
 exclude:
 - README.md
