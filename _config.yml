@@ -1,3 +1,5 @@
+path: /org  
+url:  'http://dmitriikonstantin.github.io/org'
 theme: jekyll-theme-minimal
 
 markdown: kramdown
