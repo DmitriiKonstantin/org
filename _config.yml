@@ -1,1 +1,16 @@
 theme: jekyll-theme-minimal
+
+markdown: kramdown
+
+#sass:
+#  sass_dir: css
+#  style:    expanded
+
+permalink: /:title.html
+
+exclude:
+- README.md
+
+
+safe: true
+lsi: false
