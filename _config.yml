@@ -2,16 +2,16 @@ path: /org
 url:  'http://dmitriikonstantin.github.io/org'
 theme: jekyll-theme-minimal
 
-markdown: kramdown
+#markdown: kramdown
 
 #sass:
 # sass_dir: css
 # style:    expanded
 
-permalink: /:title
+#permalink: /:title
 
-exclude:
-- README.md
+#exclude:
+#- README.md
 
 
 safe: true
