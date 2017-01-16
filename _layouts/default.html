@@ -6,7 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
 	<title>org by DmitriiKonstantin</title>
 
-	<link rel="stylesheet" href="/org/assets/css/style.css?v=1a54ba04e655a5a1b7ead43ff6a4d984208076a8">
+	<link rel="stylesheet" href="/org/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/org/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/org/css/style.css?v=1a54ba04e655a5a1b7ead43ff6a4d984208076a8">
 	<meta name="viewport" content="width=device-width">
 	<!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -14,22 +16,26 @@
 </head>
 
 <body>
-	<div class="wrapper">
-		<header>
+	<div class="container body-content docs">
+		<div class="row">
+		
+		</div>
+		<header class="col-md-2">
+			<nav class="docs-nav visible-md visible-lg affix-top">
+				<ul class="nav">
+					{% for post in site.posts %}
 
-			<h1>org</h1>
-			<p></p>
+						{% if page.url == post.url %}
+						<li class="active"><a class="area" href="{{ site.path }}{{ post.url }}">{{ post.title }} <small></small></a></li>
+						{% else %}
+						<li><a class="area" href="{{ site.path }}{{ post.url }}">{{ post.title }} <small></small></a></li>
+						{% endif %}
 
-			<p class="view">
-				{% for post in site.posts %}
-				<a href="{{ site.path }}{{ post.url }}">{{ post.title }} <small></small></a>
-				{% endfor %}
-				</p>
-
+					{% endfor %}
+				</ul>
+			</nav>
 		</header>
-		<section>
-			{{ content }}
-		</section>
+		{{ content }}
 		<footer>
 
 			<p>This project is maintained by <a href="https://github.com/DmitriiKonstantin">DmitriiKonstantin</a></p>

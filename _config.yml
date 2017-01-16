@@ -13,6 +13,7 @@ permalink: /:title
 exclude:
 - README.md
 
+excerpt_separator: ""
 
 safe: true
 lsi: false
