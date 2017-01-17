@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Gadget"
-permalink: "/widgets/gadget/"
+permalink: "/widgets/gadget"
+categories: widgets
 ---
 
 # Gadget Widget
