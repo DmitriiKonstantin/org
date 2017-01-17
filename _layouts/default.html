@@ -37,7 +37,7 @@ The following part removes dulpicated tags and invalid tags like blank tag.
 {% for tag in rawcats %}
 	{% if tag != "" %}
 		{% if cats == "" %}
-			{% assign tags = tag | split:'|' %}
+			{% assign cats = tag | split:'|' %}
 		{% endif %}
 		{% unless cats contains tag %}
 			{% assign cats = cats | join:'|' | append:'|' | append:tag | split:'|' %}
@@ -50,11 +50,12 @@ The following part removes dulpicated tags and invalid tags like blank tag.
 		<div class="row">
 			<header class="col-md-2">
 				<nav class="docs-nav visible-md visible-lg affix-top" id="docs-navbar">
-					<ul class="nav">
+					<ul class="nav" id="main-nav">
 
 						{% for cat in cats %}
-							<li class="panel {% if page.categories contains cat %}expanded active{% else %}collapsed{% ednif %}"><a class="area" href="#{{ cat | slugify }}">{{ cat }}</a>
-								<ul id="{{ cat | slugify }}" class="collapse in">
+							<li class="panel {% if page.categories contains cat %}expanded active{% else %}collapsed{% endif %}">
+								<a class="area" href="#{{ cat | slugify }}" data-parent="#main-nav" data-toggle="collapse">{{ cat }}</a>
+								<ul id="{{ cat | slugify }}" class="collapse {% if page.categories contains cat %}in{% endif %}">
 								{% for post in site.pages %}
 									{% if post.categories contains cat %}
 										<li class="{% if page.url == post.url %}active{% endif %}" data-page="{{ page.url }}" data-post="{{ post.url }}"><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></li>
