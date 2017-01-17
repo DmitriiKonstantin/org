@@ -5930,13 +5930,13 @@ ul.video-list {
         }
 
         > a:hover {
-          background: url($site-img-path + /expand-up.svg) 110px 5px no-repeat;
+          background: url(/org/img/expand-up.svg) 110px 5px no-repeat;
           background-size: 24px;
         }
       }
 
       &.collapsed > a:hover {
-        background: url($site-img-path + /expand-down.svg) 110px 5px no-repeat;
+        background: url(/org/img/expand-down.svg) 110px 5px no-repeat;
         background-size: 24px;
       }
     }
