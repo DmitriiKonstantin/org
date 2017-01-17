@@ -56,11 +56,15 @@ The following part removes dulpicated tags and invalid tags like blank tag.
 				<ul class="nav">
 
 					{% for cat in cats %}
-						<li class="panel active expanded"><a class="area" href="#{{ cat | slugify }}">{{ cat }}</a>
+						<li class="panel collapsed"><a class="area" href="#{{ cat | slugify }}">{{ cat }}</a>
 							<ul id="{{ cat | slugify }}" class="collapse in">
 							{% for post in site.pages %}
 								{% if post.categories contains cat %}
-								<li><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></li>
+									{% if page.url == post.url %}
+										<li class="active"><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></li>
+									{% else %}
+										<li><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></li>
+									{% endif %}
 								{% endif %}
 							{% endfor %}
 							</ul>
