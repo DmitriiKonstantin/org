@@ -63,7 +63,7 @@ The following part removes dulpicated tags and invalid tags like blank tag.
 									{% if page.url == post.url %}
 										<li class="active" data-page="{{ page.url }}" data-post="{{ post.url }}"><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></li>
 									{% else %}
-										<li><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></li>
+										<li data-page="{{ page.url }}" data-post="{{ post.url }}"><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></li>
 									{% endif %}
 								{% endif %}
 							{% endfor %}
