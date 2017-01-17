@@ -45,36 +45,30 @@ The following part removes dulpicated tags and invalid tags like blank tag.
 	{% endif %}
 {% endfor %}
 
-
 <body>
 	<div class="container body-content docs">
 		<div class="row">
-		
-		</div>
-		<header class="col-md-2">
-			<nav class="docs-nav visible-md visible-lg affix-top" id="docs-navbar">
-				<ul class="nav">
+			<header class="col-md-2">
+				<nav class="docs-nav visible-md visible-lg affix-top" id="docs-navbar">
+					<ul class="nav">
 
-					{% for cat in cats %}
-						<li class="panel collapsed"><a class="area" href="#{{ cat | slugify }}">{{ cat }}</a>
-							<ul id="{{ cat | slugify }}" class="collapse in">
-							{% for post in site.pages %}
-								{% if post.categories contains cat %}
-									{% if page.url == post.url %}
-										<li class="active" data-page="{{ page.url }}" data-post="{{ post.url }}"><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></li>
-									{% else %}
-										<li data-page="{{ page.url }}" data-post="{{ post.url }}"><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></li>
+						{% for cat in cats %}
+							<li class="panel {% if page.categories contains cat %}expanded active{% else %}collapsed{% ednif %}"><a class="area" href="#{{ cat | slugify }}">{{ cat }}</a>
+								<ul id="{{ cat | slugify }}" class="collapse in">
+								{% for post in site.pages %}
+									{% if post.categories contains cat %}
+										<li class="{% if page.url == post.url %}active{% endif %}" data-page="{{ page.url }}" data-post="{{ post.url }}"><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></li>
 									{% endif %}
-								{% endif %}
-							{% endfor %}
-							</ul>
-						</li>	
-					{% endfor %}
+								{% endfor %}
+								</ul>
+							</li>	
+						{% endfor %}
 
-				</ul>
-			</nav>
-		</header>
-		{{ content }}
+					</ul>
+				</nav>
+			</header>
+			{{ content }}
+		</div>
 		<footer>
 			<p>&copy; 2011-2017 Knoema. All rights reserved. </p>
 		</footer>
