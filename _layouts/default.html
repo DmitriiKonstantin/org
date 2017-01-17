@@ -16,6 +16,36 @@
     <![endif]-->
 </head>
 
+{% comment %}
+=======================
+The following part extracts all the tags from your posts and sort tags, so that you do not need to manually collect your tags to a place.
+=======================
+{% endcomment %}
+{% assign rawcats = "" %}
+{% for post in site.pages %}
+	{% assign ttags = post.categories | join:'|' | append:'|' %}
+	{% assign rawcats = rawcats | append:ttags %}
+{% endfor %}
+{% assign rawcats = rawcats | split:'|' | sort %}
+
+{% comment %}
+=======================
+The following part removes dulpicated tags and invalid tags like blank tag.
+=======================
+{% endcomment %}
+{% assign cats = "" %}
+{% for tag in rawcats %}
+	{% if tag != "" %}
+		{% if cats == "" %}
+			{% assign tags = tag | split:'|' %}
+		{% endif %}
+		{% unless cats contains tag %}
+			{% assign cats = cats | join:'|' | append:'|' | append:tag | split:'|' %}
+		{% endunless %}
+	{% endif %}
+{% endfor %}
+
+
 <body>
 	<div class="container body-content docs">
 		<div class="row">
@@ -24,24 +54,19 @@
 		<header class="col-md-2">
 			<nav class="docs-nav visible-md visible-lg affix-top" id="docs-navbar">
 				<ul class="nav">
-					{% for post in site.posts %}
 
-						{% if page.url == post.url %}
-						<li class="active"><a class="area" href="{{ site.path }}{{ post.url }}">{{ post.title }} <small></small></a></li>
-						{% else %}
-						<li><a class="area" href="{{ site.path }}{{ post.url }}">{{ post.title }} <small></small></a></li>
-						{% endif %}
-
+					{% for cat in cats %}
+						<li class="panel active expanded"><a class="area" href="#{{ cat | slugify }}">{{ cat }}</a>
+							<ul id="{{ cat | slugify }}" class="collapse in">
+							{% for post in site.pages %}
+								{% if post.categories contains cat %}
+								<li><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></li>
+								{% endif %}
+							{% endfor %}
+							</ul>
+						</li>	
 					{% endfor %}
-					{% for post in site.pages %}
 
-						{% if page.url == post.url %}
-						<li class="active"><a class="area" href="{{ site.path }}{{ post.url }}">{{ post.title }} <small></small></a></li>
-						{% else %}
-						<li><a class="area" href="{{ site.path }}{{ post.url }}">{{ post.title }} <small></small></a></li>
-						{% endif %}
-
-					{% endfor %}
 				</ul>
 			</nav>
 		</header>

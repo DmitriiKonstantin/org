@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Dashboard"
-permalink: "/widgets/dashboard/"
+permalink: "/widgets/dashboard"
 categories: widgets
 ---
 
@@ -12,11 +12,6 @@ Any public page can be embedded into external web site or blog post. The example
 <iframe src="https://knoema.com/resource/embed/iffaekg" frameborder="0" scrolling="no" style="height: 650px; width: 100%;"></iframe>
 
 To embed dashboard the following HTML snippet should be used:
-
-```html
-<iframe style="width: 910px; height: 650px; border: 1px solid #ccc;" src="/resource/embed/<id>" frameborder="0" scrolling="no">
-</iframe>
-```
 
 {% highlight html %}
 <iframe style="width: 910px; height: 650px; border: 1px solid #ccc;" src="/resource/embed/<id>" frameborder="0" scrolling="no">
