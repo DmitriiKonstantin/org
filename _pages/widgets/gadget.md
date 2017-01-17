@@ -2,7 +2,7 @@
 layout: post
 title: "Gadget"
 permalink: "/widgets/gadget"
-categories: widgets
+categories: ["widgets"]
 ---
 
 # Gadget Widget
