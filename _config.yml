@@ -8,8 +8,9 @@ theme: jekyll-theme-minimal
 # sass_dir: css
 # style:    expanded
 
-permalink: /:categories/:title
+#permalink: /:categories/:title
 
+include: ["_pages"]
 exclude:
 - README.md
 
