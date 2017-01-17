@@ -1,6 +1,9 @@
 ---
 ---
 
+$site-path: "/org";
+$site-img-path: $site-path + "/img";
+
 html {
   min-height: 100%;
   position: relative;
@@ -2706,13 +2709,13 @@ ul.video-list {
         }
 
         > a:hover {
-          background: url(/img/expand-up.svg) 110px 5px no-repeat;
+          background: url($site-img-path + /expand-up.svg) 110px 5px no-repeat;
           background-size: 24px;
         }
       }
 
       &.collapsed > a:hover {
-        background: url(/img/expand-down.svg) 110px 5px no-repeat;
+        background: url($site-img-path + /expand-down.svg) 110px 5px no-repeat;
         background-size: 24px;
       }
     }
@@ -5930,13 +5933,13 @@ ul.video-list {
         }
 
         > a:hover {
-          background: url(/img/expand-up.svg) 110px 5px no-repeat;
+          background: url($site-img-path + /expand-up.svg) 110px 5px no-repeat;
           background-size: 24px;
         }
       }
 
       &.collapsed > a:hover {
-        background: url(/img/expand-down.svg) 110px 5px no-repeat;
+        background: url($site-img-path + /expand-down.svg) 110px 5px no-repeat;
         background-size: 24px;
       }
     }
