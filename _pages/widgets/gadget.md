@@ -10,7 +10,6 @@ Any gadget from any public page can be embedded into external web site or blog p
 
 <iframe src="https://knoema.com/resource/embed/kiywikd/first" frameborder="0" scrolling="no" style="height: 500px; width: 100%;"></iframe>
 
-
 In order to get embedding HTML-snippet for gadget you need to invoke its menu and select "Embed" command. You will get HTML-snippet like one below:
 
 ```html
