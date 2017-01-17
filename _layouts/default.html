@@ -61,7 +61,7 @@ The following part removes dulpicated tags and invalid tags like blank tag.
 							{% for post in site.pages %}
 								{% if post.categories contains cat %}
 									{% if page.url == post.url %}
-										<li class="active"><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></li>
+										<li class="active" data-page="{{ page.url }}" data-post="{{ post.url }}"><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></li>
 									{% else %}
 										<li><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></li>
 									{% endif %}
