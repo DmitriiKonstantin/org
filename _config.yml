@@ -4,9 +4,9 @@ theme: jekyll-theme-minimal
 
 #markdown: kramdown
 
-sass:
- sass_dir: css
- style:    expanded
+#sass:
+# sass_dir: css
+# style:    expanded
 
 include: ["_pages"]
 exclude:
