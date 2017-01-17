@@ -33,6 +33,15 @@
 						{% endif %}
 
 					{% endfor %}
+					{% for post in site.pages %}
+
+						{% if page.url == post.url %}
+						<li class="active"><a class="area" href="{{ site.path }}{{ post.url }}">{{ post.title }} <small></small></a></li>
+						{% else %}
+						<li><a class="area" href="{{ site.path }}{{ post.url }}">{{ post.title }} <small></small></a></li>
+						{% endif %}
+
+					{% endfor %}
 				</ul>
 			</nav>
 		</header>
