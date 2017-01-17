@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Dashboard"
-permalink: "/widgets/:title"
+permalink: "/widgets/"
 ---
 
 # Dashboard Widget
